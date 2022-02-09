@@ -8,9 +8,24 @@ int GetNumber()
 int constNumber = GetNumber();
 int number = GetNumber();
 //Console.WriteLine(number);
-int ostatok = number % constNumber;
+void IsMultiple(int firstNumber, int secondNumber)
+{
+    if (firstNumber > secondNumber)
+    {
+        int ostatok = firstNumber % secondNumber;
+        if (ostatok == 0)
+            Console.WriteLine($"{firstNumber} кратно {secondNumber}");
+        else
+            Console.WriteLine($"Остаток от деления {firstNumber} на {secondNumber} равен {ostatok}");
+    }
+    else
+    {
+        int ostatok = secondNumber % firstNumber;
+        if (ostatok == 0)
+            Console.WriteLine($"{secondNumber} кратно {firstNumber}");
+        else
+            Console.WriteLine($"Остаток от деления {secondNumber} на {firstNumber} равен {ostatok}");
+    }
+}
 
-if (ostatok == 0 )
-    Console.WriteLine($"{number} кратно {constNumber}");
-else
-    Console.WriteLine($"Остаток от деления {number} на {constNumber} равен {ostatok}");
+IsMultiple(constNumber, number);
